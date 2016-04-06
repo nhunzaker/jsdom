@@ -17,17 +17,25 @@ describe("jsdom/encoding", { skipIfBrowser: true }, () => {
   let testHost;
 
   before(() => {
+<<<<<<< 95b3fd98c1bbf8abdcf6a9ffa67eb89c52578ee1
     return new Promise((resolve, reject) => {
       portfinder.getPort((err, port) => {
         if (err) {
           reject(err);
           return;
+=======
+    return new Promise((done, rej) => {
+      portfinder.getPort((err, port) => {
+        if (err) {
+          return rej(err);
+>>>>>>> Add encoding handling
         }
 
         server = http.createServer((req, res) => {
           switch (req.url) {
             case "/utf8":
               res.writeHead(200, { "Content-Type": "text/plain;charset=UTF-8" });
+<<<<<<< 95b3fd98c1bbf8abdcf6a9ffa67eb89c52578ee1
               fs.createReadStream(path.resolve(__dirname, "files/encoding/utf8.html")).pipe(res);
               break;
             case "/iso88591":
@@ -49,21 +57,56 @@ describe("jsdom/encoding", { skipIfBrowser: true }, () => {
             case "/script-iso88591.js":
               res.writeHead(200);
               fs.createReadStream(path.resolve(__dirname, "files/encoding/script-iso88591.js")).pipe(res);
+=======
+              fs.createReadStream(__dirname + "/files/encoding/utf8.html").pipe(res);
+              break;
+            case "/iso88591":
+              res.writeHead(200, { "Content-Type": "text/plain;charset=ISO-8859-1" });
+              fs.createReadStream(__dirname + "/files/encoding/iso88591.html").pipe(res);
+              break;
+            case "/utf16be":
+              res.writeHead(200, { "Content-Type": "text/plain;charset=UTF-16BE" });
+              fs.createReadStream(__dirname + "/files/encoding/utf16be.html").pipe(res);
+              break;
+            case "/utf16le":
+              res.writeHead(200, { "Content-Type": "text/plain;charset=UTF-16LE" });
+              fs.createReadStream(__dirname + "/files/encoding/utf16le.html").pipe(res);
+              break;
+            case "/script-utf8.js":
+              res.writeHead(200);
+              fs.createReadStream(__dirname + "/files/encoding/script-utf8.js").pipe(res);
+              break;
+            case "/script-iso88591.js":
+              res.writeHead(200);
+              fs.createReadStream(__dirname + "/files/encoding/script-iso88591.js").pipe(res);
+>>>>>>> Add encoding handling
               break;
             case "/bom-utf8":
               res.writeHead(200, { "Content-Type": "text/plain;charset=ISO-8859-1" });
               res.write(new Buffer([0xEF, 0xBB, 0xBF]));
+<<<<<<< 95b3fd98c1bbf8abdcf6a9ffa67eb89c52578ee1
               fs.createReadStream(path.resolve(__dirname, "files/encoding/utf8.html")).pipe(res);
+=======
+              fs.createReadStream(__dirname + "/files/encoding/utf8.html").pipe(res);
+>>>>>>> Add encoding handling
               break;
             case "/bom-utf16be":
               res.writeHead(200, { "Content-Type": "text/plain;charset=ISO-8859-1" });
               res.write(new Buffer([0xFE, 0xFF]));
+<<<<<<< 95b3fd98c1bbf8abdcf6a9ffa67eb89c52578ee1
               fs.createReadStream(path.resolve(__dirname, "files/encoding/utf16be.html")).pipe(res);
+=======
+              fs.createReadStream(__dirname + "/files/encoding/utf16be.html").pipe(res);
+>>>>>>> Add encoding handling
               break;
             case "/bom-utf16le":
               res.writeHead(200, { "Content-Type": "text/plain;charset=ISO-8859-1" });
               res.write(new Buffer([0xFF, 0xFE]));
+<<<<<<< 95b3fd98c1bbf8abdcf6a9ffa67eb89c52578ee1
               fs.createReadStream(path.resolve(__dirname, "files/encoding/utf16le.html")).pipe(res);
+=======
+              fs.createReadStream(__dirname + "/files/encoding/utf16le.html").pipe(res);
+>>>>>>> Add encoding handling
               break;
             case "/meta-content-type-charset":
               res.writeHead(200, { "Content-Type": "text/plain;charset=ISO-8859-8" });
@@ -89,16 +132,26 @@ describe("jsdom/encoding", { skipIfBrowser: true }, () => {
           }
         });
 
+<<<<<<< 95b3fd98c1bbf8abdcf6a9ffa67eb89c52578ee1
         server.listen(port, resolve);
+=======
+        server.listen(port, () => done());
+>>>>>>> Add encoding handling
         testHost = "http://127.0.0.1:" + port;
       });
     });
   });
 
   after(() => {
+<<<<<<< 95b3fd98c1bbf8abdcf6a9ffa67eb89c52578ee1
     return new Promise(resolve => {
       server.close();
       resolve();
+=======
+    return new Promise((done, rej) => {
+      server.close();
+      done();
+>>>>>>> Add encoding handling
     });
   });
 
