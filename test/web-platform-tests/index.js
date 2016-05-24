@@ -104,7 +104,6 @@ describe("Web Platform Tests", () => {
     "html/browsers/history/the-location-interface/location_port.html",
     "html/browsers/history/the-location-interface/location_protocol.html",
     "html/browsers/history/the-location-interface/location_search.html",
-<<<<<<< 95b3fd98c1bbf8abdcf6a9ffa67eb89c52578ee1
     "html/browsers/offline/browser-state/navigator_online_online.html",
     // "html/browsers/windows/browsing-context-first-created.xhtml", // jsdom will try to feed <![CDATA[ to the script parser, causing errors
     "html/dom/documents/dom-tree-accessors/Document.body.html",
@@ -125,9 +124,7 @@ describe("Web Platform Tests", () => {
     "html/dom/documents/dom-tree-accessors/document.title-07.html",
     "html/dom/documents/dom-tree-accessors/document.title-08.html",
     // "html/dom/documents/dom-tree-accessors/document.title-09.html" // SVG stuff
-=======
     "html/browsers/windows/browsing-context-first-created.xhtml",
->>>>>>> Add encoding handling
     "html/dom/dynamic-markup-insertion/document-writeln/document.writeln-02.html",
     "html/dom/dynamic-markup-insertion/document-writeln/document.writeln-03.html",
     "html/dom/elements/global-attributes/classlist-nonstring.html",
@@ -213,6 +210,7 @@ describe("Web Platform Tests", () => {
     "dom/events/Event-dispatch-detached-click.html",
     "dom/events/Event-dispatch-handlers-changed.html",
     "dom/events/Event-dispatch-multiple-stopPropagation.html",
+    // "dom/events/Event-dispatch-multiple-stopPropagation.html", // unclear why failing
     "dom/events/Event-dispatch-omitted-capture.html",
     "dom/events/Event-dispatch-order.html",
     "dom/events/Event-dispatch-propagation-stopped.html",
@@ -220,6 +218,7 @@ describe("Web Platform Tests", () => {
     "dom/events/Event-dispatch-target-moved.html",
     "dom/events/Event-dispatch-target-removed.html",
     "dom/events/Event-dispatch-throwing.html",
+    // "dom/events/Event-dispatch-throwing.html", // unclear why failing
     "dom/events/Event-init-while-dispatching.html",
     "dom/events/Event-initEvent.html",
     "dom/events/Event-propagation.html",
@@ -385,17 +384,14 @@ describe("Web Platform Tests", () => {
     "XMLHttpRequest/send-entity-body-basic.htm",
     "XMLHttpRequest/send-entity-body-document-bogus.htm",
     "XMLHttpRequest/send-entity-body-document.htm",
-<<<<<<< 95b3fd98c1bbf8abdcf6a9ffa67eb89c52578ee1
     // "XMLHttpRequest/send-entity-body-empty.htm", // hard to get Node to not send Content-Length
     // "XMLHttpRequest/send-entity-body-get-head-async.htm", // hard to get Node to not send Content-Length
     // "XMLHttpRequest/send-entity-body-get-head.htm", // hard to get Node to not send Content-Length
     // "XMLHttpRequest/send-entity-body-none.htm", // hard to get Node to not send Content-Length
-=======
     "XMLHttpRequest/send-entity-body-empty.htm",
     "XMLHttpRequest/send-entity-body-get-head-async.htm",
     "XMLHttpRequest/send-entity-body-get-head.htm",
     "XMLHttpRequest/send-entity-body-none.htm",
->>>>>>> Add encoding handling
     "XMLHttpRequest/send-network-error-async-events.sub.htm",
     "XMLHttpRequest/send-network-error-sync-events.sub.htm",
     "XMLHttpRequest/send-no-response-event-loadend.htm",
