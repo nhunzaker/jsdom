@@ -84,7 +84,10 @@ describe("Local tests in Web Platform Test format (to-upstream)", () => {
     "html/webappapis/timers/settimeout-setinterval-handles.html",
     "XMLHttpRequest/formdata-constructor.html",
     "XMLHttpRequest/thrown-error-in-events.html",
-    "XMLHttpRequest/send-authentication-cors-post.htm"
+    "XMLHttpRequest/send-authentication-cors-post.htm",
+    "svg/types/SVGElement.ownerSVGElement-01.html",
+    "svg/types/SVGElement.viewportElement-01.html",
+    "svg/types/SVGStringList.length-01.html"
   ]
   .forEach(runWebPlatformTest);
 });
